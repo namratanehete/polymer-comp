@@ -1,7 +1,6 @@
 <link rel="import"
       href="http://www.polymer-project.org/components/polymer/polymer.html">
 
-
 <polymer-element name="openmrs-logout">
 
     <template>
@@ -109,74 +108,54 @@
                 font-size: 16px;
             }
         </style>
-        
-        <div id='test'>test</div>
-        <script>
-            window.onload = function() {
-                console.log("Inside window onload");
-                console.log("test "+document);
-                console.log($( "#test" ).html());
-            }
-            $(document).ready(function() {
-                var all = document.getElementsByTagName("*");
 
-                for (var i=0, max=all.length; i < max; i++) {
-                     console.log("i = "+i);
-                }
-                console.log("Inside script document ready");
-                console.log("test "+document.getElementById('test'));
-                console.log($( "#test" ).html());
-            });
-        </script>
-        <li class="loginlogout">
+        <li id="test1" class="loginlogout">
             <a id="lbutton" href="{{buttonURL}}">
                 {{buttonName}}
                 <i class="{{className}}"></i>
             </a>
         </li>
-        <script>
-            $(document).ready(function() {
-//                var request = $.ajax({
-//                    url: 'http://localhost:8081/openmrs/ws/rest/v1/session',
-//                    headers: {
-//                        'Accept': 'application/json'
-//                    },
-//                    type: "GET",
-//                    cache: false,
-//                    crossDomain: true,
-//                    xhrFields: {
-//                        withCredentials: true
-//                    }
-//                }).done(function (data, textStatus, jqXHR) {
-//                    console.log("Seting buttonname buttonURL and className");
-//                    
-//                    if(data.authenticated)
-//                    {
-//			console.log("data.authenticated "+data.authenticated);
-//                        this.buttonName = "Logout";
-//                        this.buttonURL = "/openmrs/logout";
-//                        this.className = 'icon-signout small';
-//                    }
-//                    else
-//                    {
-//                        console.log("data.authenticated "+data.authenticated);
-//                        this.buttonName = "Login";
-//                        this.buttonURL = "/openmrs/login";
-//                    }
-//		console.log("done");
-//                }).fail(function (jqXHR, textStatus, errorThrown) {
-//                    //$.blockUI({message: $('#failureMessage')});
-//                });
-            });
-        </script>
     </template>
     <script>
         Polymer("openmrs-logout", {
             buttonName : "",
             buttonURL: "",
             className: "",
-            ready: function () {
-                
+            created: function(){
+                console.log("buttonName before calling ajax "+this.buttonName);
+                 var request = $.ajax({
+                    url: 'http://localhost:8081/openmrs/ws/rest/v1/session',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    type: "GET",
+                    cache: false,
+                    crossDomain: true,
+                    xhrFields: {
+                        withCredentials: true
+                    }
+                }).done(function (data, textStatus, jqXHR) {
+                    console.log("Seting buttonname buttonURL and className");
+                    
+                    if(data.authenticated)
+                    {
+			console.log("data.authenticated "+data.authenticated);
+                        this.buttonName = "Logout";
+                        console.log("this.buttonName "+this.buttonName);
+                        this.buttonURL = "/openmrs/logout";
+                        this.className = 'icon-signout small';
+                    }
+                    else
+                    {
+                        console.log("data.authenticated "+data.authenticated);
+                        this.buttonName = "Login";
+                        console.log("this.buttonName "+this.buttonName);
+                        this.buttonURL = "/openmrs/login";
+                    }
+		console.log("done");
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    //$.blockUI({message: $('#failureMessage')});
+                });
             }
         });
     </script>

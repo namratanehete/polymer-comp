@@ -1,0 +1,159 @@
+<link rel="import"
+      href="http://www.polymer-project.org/components/polymer/polymer.html">
+
+
+<polymer-element name="openmrs-location">
+
+    <template>
+        <style>
+            li.change-location {
+                border: 1px solid #006056;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -o-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -khtml-border-radius: 3px;
+                border-radius: 3px;
+            }
+            li {
+                display: inline-block;
+                margin: 10px 0 10px 20px;
+            }
+            a, a:visited, a:hover, a:link {
+                color: white;
+            }
+            a, a:visited, a:hover, a:link {
+                color: white;
+            }
+            a:visited, a.visited {
+                color: #007fff;
+            }
+            a, a:visited, a:hover, a:link {
+                color: white;
+            }
+            a {
+                color: #007fff;
+                text-decoration: none;
+            }
+            user agent stylesheeta:-webkit-any-link {
+                color: -webkit-link;
+                text-decoration: underline;
+                cursor: auto;
+            }
+            li [class^="icon-"], li [class*=" icon-"], .nav li [class^="icon-"], .nav li [class*=" icon-"] {
+                display: inline-block;
+                width: 1.25em;
+                text-align: center;
+            }
+            a [class^="icon-"], a [class*=" icon-"] {
+                display: inline-block;
+            }
+            i.small {
+                font-size: 1.2em;
+            }
+            [class^="icon-"], [class*=" icon-"] {
+                font-family: FontAwesome;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: inherit;
+                -webkit-font-smoothing: antialiased;
+                padding: 0.2em;
+                display: inline;
+                width: auto;
+                height: auto;
+                line-height: normal;
+                vertical-align: baseline;
+                background-image: none;
+                background-position: 0% 0%;
+                background-repeat: repeat;
+                margin-top: 0;
+            }
+            .small {
+                font-family: "OpenSansLight";
+            }
+            user agent stylesheeti, cite, em, var, address, dfn {
+                font-style: italic;
+            }
+            .icon-map-marker:before {
+                content: "\f041";
+            }
+            [class^="icon-"]:before, [class*=" icon-"]:before {
+                text-decoration: inherit;
+                display: inline-block;
+                speak: none;
+            }
+            i.link {
+                font-size: 0.7em;
+            }
+            .icon-caret-down:before {
+                content: "\f0d7";
+            }
+            li.change-location, li.logout {
+                color: white;
+            }
+            li.change-location a {
+                display: block;
+            }
+            li.change-location:hover, li.change-location .focus {
+                background: #006056;
+            }
+            li.change-location:hover a:hover, li.change-location .focus a:hover {
+                text-decoration: none;
+            }
+            #session-location {
+                position: absolute;
+                display: none;
+                top: 60px;
+                left: 70px;
+                background: white;
+                border: 2px solid #006056;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -o-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -khtml-border-radius: 3px;
+                border-radius: 3px;
+                width: 853px;
+                font-size: 0.8em;
+                z-index: 1;
+            }
+            #session-location .select {
+                font-size: 1em;
+            }
+            #session-location li {
+                width: 239px;
+            }
+
+        </style>
+        <li class="change-location">
+            <a href="#">
+                <i class="icon-map-marker small"></i>
+                <span data-bind="text: text"></span>
+                <i class="icon-caret-down link"></i>
+            </a>
+        </li>
+        <div id="session-location" style="display: none">
+            <div id="spinner" style="position:absolute; display:none">
+                <img src="/openmrs/ms/uiframework/resource/uicommons/images/spinner.gif">
+            </div>
+            <ul class="select">
+
+                <li class="selected" locationId="6" locationName="Inpatient Ward">Inpatient Ward</li>
+
+                <li class="" locationId="4" locationName="Isolation Ward">Isolation Ward</li>
+
+                <li class="" locationId="3" locationName="Laboratory">Laboratory</li>
+
+                <li class="" locationId="7" locationName="Outpatient Clinic">Outpatient Clinic</li>
+
+                <li class="" locationId="2" locationName="Pharmacy">Pharmacy</li>
+
+                <li class="" locationId="5" locationName="Registration Desk">Registration Desk</li>
+
+            </ul>
+        </div>
+    </template>
+    <script>
+        Polymer("openmrs-location", {});
+    </script>
+</polymer-element>

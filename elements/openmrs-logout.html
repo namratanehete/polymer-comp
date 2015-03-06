@@ -1,0 +1,183 @@
+<link rel="import"
+      href="http://www.polymer-project.org/components/polymer/polymer.html">
+
+
+<polymer-element name="openmrs-logout">
+
+    <template>
+        <style>
+            li.loginlogout {
+                color: white;
+            }
+            li {
+                display: inline-block;
+                margin: 10px 0 10px 20px;
+            }
+            ul, ol, li {
+                margin: 0;
+                padding: 0;
+            }
+            user agent stylesheetli {
+                display: list-item;
+                text-align: -webkit-match-parent;
+            }
+            ul {
+                list-style: none;
+            }
+            user agent stylesheetul, menu, dir {
+                display: block;
+                list-style-type: disc;
+                -webkit-margin-before: 1em;
+                -webkit-margin-after: 1em;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+                -webkit-padding-start: 40px;
+            }
+            a, a:visited, a:hover, a:link {
+                color: white;
+            }
+            a, a:visited, a:hover, a:link {
+                color: white;
+            }
+            a:visited, a.visited {
+                color: #007fff;
+            }
+            a, a:visited, a:hover, a:link {
+                color: white;
+            }
+            a {
+                color: #007fff;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            user agent stylesheeta:-webkit-any-link {
+                color: -webkit-link;
+                text-decoration: underline;
+                cursor: auto;
+            }
+            li [class^="icon-"], li [class*=" icon-"], .nav li [class^="icon-"], .nav li [class*=" icon-"] {
+                display: inline-block;
+                width: 1.25em;
+                text-align: center;
+            }
+            a [class^="icon-"], a [class*=" icon-"] {
+                display: inline-block;
+            }
+            i.small {
+                font-size: 1.2em;
+            }
+            [class^="icon-"], [class*=" icon-"] {
+                font-family: FontAwesome;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: inherit;
+                -webkit-font-smoothing: antialiased;
+                padding: 0.2em;
+                display: inline;
+                width: auto;
+                height: auto;
+                line-height: normal;
+                vertical-align: baseline;
+                background-image: none;
+                background-position: 0% 0%;
+                background-repeat: repeat;
+                margin-top: 0;
+            }
+            .small {
+                font-family: "OpenSansLight";
+            }
+            user agent stylesheeti, cite, em, var, address, dfn {
+                font-style: italic;
+            }
+            .icon-signout:before {
+                content: "\f08b";
+            }
+            [class^="icon-"]:before, [class*=" icon-"]:before {
+                text-decoration: inherit;
+                display: inline-block;
+                speak: none;
+            }
+            body {
+                font-family: "OpenSans", Arial, sans-serif;
+                -webkit-font-smoothing: subpixel-antialiased;
+                max-width: 1000px;
+                margin: 10px auto;
+                background: #eeeeee;
+                color: #363463;
+                font-size: 16px;
+            }
+        </style>
+        
+        <div id='test'>test</div>
+        <script>
+            window.onload = function() {
+                console.log("Inside window onload");
+                console.log("test "+document);
+                console.log($( "#test" ).html());
+            }
+            $(document).ready(function() {
+                var all = document.getElementsByTagName("*");
+
+                for (var i=0, max=all.length; i < max; i++) {
+                     console.log("i = "+i);
+                }
+                console.log("Inside script document ready");
+                console.log("test "+document.getElementById('test'));
+                console.log($( "#test" ).html());
+            });
+        </script>
+        <li class="loginlogout">
+            <a id="lbutton" href="{{buttonURL}}">
+                {{buttonName}}
+                <i class="{{className}}"></i>
+            </a>
+        </li>
+        <script>
+            $(document).ready(function() {
+//                var request = $.ajax({
+//                    url: 'http://localhost:8081/openmrs/ws/rest/v1/session',
+//                    headers: {
+//                        'Accept': 'application/json'
+//                    },
+//                    type: "GET",
+//                    cache: false,
+//                    crossDomain: true,
+//                    xhrFields: {
+//                        withCredentials: true
+//                    }
+//                }).done(function (data, textStatus, jqXHR) {
+//                    console.log("Seting buttonname buttonURL and className");
+//                    
+//                    if(data.authenticated)
+//                    {
+//			console.log("data.authenticated "+data.authenticated);
+//                        this.buttonName = "Logout";
+//                        this.buttonURL = "/openmrs/logout";
+//                        this.className = 'icon-signout small';
+//                    }
+//                    else
+//                    {
+//                        console.log("data.authenticated "+data.authenticated);
+//                        this.buttonName = "Login";
+//                        this.buttonURL = "/openmrs/login";
+//                    }
+//		console.log("done");
+//                }).fail(function (jqXHR, textStatus, errorThrown) {
+//                    //$.blockUI({message: $('#failureMessage')});
+//                });
+            });
+        </script>
+    </template>
+    <script>
+        Polymer("openmrs-logout", {
+            buttonName : "",
+            buttonURL: "",
+            className: "",
+            ready: function () {
+                
+            }
+        });
+    </script>
+</polymer-element>

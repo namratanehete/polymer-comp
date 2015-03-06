@@ -1,0 +1,23 @@
+<link rel="import"
+      href="http://www.polymer-project.org/components/polymer/polymer.html">
+
+
+
+<polymer-element name="openmrs-header" >
+    <template>
+        <link type="text/css" href="../css/main.css" rel="stylesheet">
+        <header>
+            <openmrs-logo></openmrs-logo>
+            <ul class="user-options">
+                <openmrs-user></openmrs-user>
+                <openmrs-location></openmrs-location>
+                <openmrs-logout></openmrs-logout>
+            </ul>
+            
+
+        </header>
+    </template>
+    <script>
+        Polymer('openmrs-header', {});
+    </script>
+</polymer-element>

@@ -1,23 +1,41 @@
-<link rel="import"
-      href="http://www.polymer-project.org/components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="openmrs-logo.html">
+<link rel="import" href="openmrs-user.html">
+<link rel="import" href="openmrs-location.html">
+<link rel="import" href="openmrs-logout.html">
 
-
-
-<polymer-element name="openmrs-header" >
+<polymer-element name="openmrs-header" noscript>
     <template>
-        <link type="text/css" href="../css/main.css" rel="stylesheet">
+        <style>
+            header {
+                background-color: rgb(0, 70, 63);
+                border-radius: 5px;
+                color: rgb(204, 204, 204);
+                display: block;
+                font-family: OpenSans, Arial, sans-serif;
+                font-size: 16px;
+                height: 52px;
+                line-height: 1em;
+                position: relative;
+            }
+            .user-options{
+                text-align: right;
+                padding: 0;
+                margin: 0;
+            }
+            li {
+                display: inline-block;
+                margin: 15px 0 10px 20px;
+                padding: 0;
+            }
+        </style>
         <header>
             <openmrs-logo></openmrs-logo>
             <ul class="user-options">
-                <openmrs-user></openmrs-user>
-                <openmrs-location></openmrs-location>
-                <openmrs-logout></openmrs-logout>
+                <li><openmrs-user></openmrs-user></li>
+                <li><openmrs-location></openmrs-location></li>
+                <li><openmrs-logout></openmrs-logout></li>
             </ul>
-            
-
         </header>
     </template>
-    <script>
-        Polymer('openmrs-header', {});
-    </script>
 </polymer-element>

@@ -1,89 +1,20 @@
-<link rel="import"
-      href="http://www.polymer-project.org/components/polymer/polymer.html">
-
-
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
 <polymer-element name="openmrs-user">
-
     <template>
         <style>
-            li {
-                display: inline-block;
-                margin: 10px 0 10px 20px;
-            }
-            li [class^="icon-"], li [class*=" icon-"], .nav li [class^="icon-"], .nav li [class*=" icon-"] {
-                display: inline-block;
-                width: 1.25em;
-                text-align: center;
-            }
-            i.small {
+            i.small{
                 font-size: 1.2em;
-            }
-            [class^="icon-"], [class*=" icon-"] {
-                font-family: FontAwesome;
-                font-weight: normal;
-                font-style: normal;
-                text-decoration: inherit;
-                -webkit-font-smoothing: antialiased;
-                padding: 0.2em;
-                display: inline;
-                width: auto;
-                height: auto;
-                line-height: normal;
-                vertical-align: baseline;
-                background-image: none;
-                background-position: 0% 0%;
-                background-repeat: repeat;
-                margin-top: 0;
-            }
-            .small {
-                font-family: "OpenSansLight";
-            }
-            user agent stylesheeti, cite, em, var, address, dfn {
-                font-style: italic;
-            }
-            .icon-user:before {
-                content: "\f007";
-            }
-            [class^="icon-"]:before, [class*=" icon-"]:before {
-                text-decoration: inherit;
-                display: inline-block;
-                speak: none;
-            }
-            user agent stylesheetli {
-                display: list-item;
-                text-align: -webkit-match-parent;
+                text-align: center;
+                width: 1.25em
             }
         </style>
-        <li class="identifier">
-            <i class="icon-user small"></i>
-            admin
-        </li>
+        <core-ajax auto url="http://demo.openmrs.org/openmrs/ws/rest/v1/session" on-core-response="{{ajaxResponse}}"></core-ajax>
+        <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+        <i class="fa fa-user small"></i>
+        admin
     </template>
     <script>
         Polymer("openmrs-user", {
-            ready: function () {
-                console.log('ajax call to /openmrs/ws/rest/v1/session');
-                var request = $.ajax({
-                    url: '/openmrs/ws/rest/v1/session',
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    type: "GET",
-                    cache: false,
-                    crossDomain: true,
-                    xhrFields: {
-                        withCredentials: true
-                    }
-                }).done(function (data, textStatus, jqXHR) {
-                    console.log('Hello' + " authenticated " + data.authenticated);
-//            if (jqXHR.getResponseHeader('Login-Page') == 'true') {
-//                $.blockUI({message: $('#unauthenticatedMessage')});
-//            }
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    //$.blockUI({message: $('#failureMessage')});
-                });
-            }
-
         });
     </script>
 </polymer-element>

@@ -1,67 +1,32 @@
-<link rel="import"
-      href="http://www.polymer-project.org/components/polymer/polymer.html">
-
-
-<polymer-element name="openmrs-logo">
-
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<polymer-element name="openmrs-logo" attributes="url">
     <template>
         <style>
             .logo {
+                color: rgb(204, 204, 204);
+                display: block;
+                font-family: OpenSans, Arial, sans-serif;
+                font-size: 16px;
+                height: 44px;
+                line-height: 16px;
+                width: 120px;
                 float: left;
                 margin: 4px;
             }
-            user agent stylesheetdiv {
-                display: block;
-            }
             .logo img {
                 width: 120px;
-            }
-            img {
                 border: 0;
-            }
-            a, a:visited, a:hover, a:link {
-                color: white;
-            }
-            a, a:visited, a:hover, a:link {
-                color: white;
-            }
-            a:visited, a.visited {
-                color: #007fff;
-            }
-            a, a:visited, a:hover, a:link {
-                color: white;
-            }
-            a {
-                color: #007fff;
-                text-decoration: none;
-            }
-            user agent stylesheeta:-webkit-any-link {
-                color: -webkit-link;
-                text-decoration: underline;
-                cursor: auto;
-            }
-            body {
-                font-family: "OpenSans", Arial, sans-serif;
-                -webkit-font-smoothing: subpixel-antialiased;
-                max-width: 1000px;
-                margin: 10px auto;
-                background: #eeeeee;
-                color: #363463;
-                font-size: 16px;
-            }
-            html {
-                font-family: sans-serif;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
             }
         </style>
         <div class="logo">
-            <a href="#">
+            <a href="{{url}}">
                 <img alt="" src="../img/openmrs-with-title-small.png"/>
             </a>
         </div>
     </template>
     <script>
-        Polymer("openmrs-logo", {});
+        Polymer({
+            url: "#",
+        });
     </script>
 </polymer-element>

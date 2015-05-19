@@ -12,13 +12,25 @@
                 width: 1.25em
             }
         </style>
+        <core-ajax auto url="http://demo.openmrs.org/openmrs/ws/rest/v1/location/aff27d58-a15c-49a6-9beb-d30dcfc0c66e"
+        on-core-response="{{handleResponse}}"></core-ajax>
         <a href="#">
             <i class="fa fa-map-marker small"></i>
-            <span>HELLO</span>
+            <span id="loc">  </span>
             <i class="fa fa-caret-down link"></i>
         </a>
     </template>
     <script>
-        Polymer("openmrs-location", {});
+        Polymer("openmrs-location", {
+            handleResponse: function (event, response) { 
+            console.log(JSON.parse(response.response).childLocations);  
+            var objarray = new Array();
+            objarray =  JSON.parse(response.response).childLocations;          
+            for(j=0;j<objarray.length;j++)
+            {              
+            this.$.loc.textContent=objarray[j].display; 
+            }                 
+         }
+        });
     </script>
 </polymer-element>

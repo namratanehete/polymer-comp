@@ -1,1 +1,23 @@
-{"version":"0.1","name":"Polymer component","description":"First polymer component","icons":{"16":"/img/sort_asc.png","48":"/icon.png","128":"/img/sort_asc.png"},"developer":{"url":"http://sunnytalkstech.blogspot.com","name":"Namrata Nehete","company":null,"email":null},"activities":{"openmrs":{"href":"http://localhost:8081/openmrs"}},"folderName":"polymercomp","baseUrl":"http://localhost:8081/openmrs/owa","launchUrl":"http://localhost:8081/openmrs/owa/polymercomp//index.html","launch_path":"/index.html","installs_allowed_from":["*"],"default_locale":"en"}
+{
+    "version":"0.1",
+    "name":"Polymer component",
+	"description": "First polymer component",
+	"icons":{
+		"16":"/img/sort_asc.png",
+		"48":"/icon.png",
+		"128":"/img/sort_asc.png"
+	},
+    "developer": {
+        "name": "Namrata Nehete",
+        "url": "http://sunnytalkstech.blogspot.com"
+    },
+	"activities":{
+		"openmrs":{
+			"href":"*"
+		}
+	},
+	"folderName":"polymer-comp",
+	"launch_path":"/index.html",
+	"installs_allowed_from":["*"],
+	"default_locale":"en"
+}

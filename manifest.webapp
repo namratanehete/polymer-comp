@@ -1,11 +1,11 @@
 {
     "version":"0.1",
     "name":"Polymer component",
-	"description": "First polymer component",
+	"description": "OpenMRS Header",
 	"icons":{
-		"16":"/img/sort_asc.png",
-		"48":"/icon.png",
-		"128":"/img/sort_asc.png"
+		"16":"/img/openmrs-with-title-small.png",
+		"48":"/openmrs-logo.png",
+		"128":"/img/openmrs-with-title-small.png"
 	},
     "developer": {
         "name": "Namrata Nehete",
